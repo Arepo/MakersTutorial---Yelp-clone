@@ -1,0 +1,7 @@
+<% if Restaurant.any? %>
+	<% Restaurant.all.each do |r| %>
+		<%= r.name %>
+	<% end %>
+<% else %>
+	No restaurants
+<% end %>
