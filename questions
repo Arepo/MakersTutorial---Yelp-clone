@@ -1,3 +1,15 @@
 questions
 
 Why don't we access instance variables of controllers with reader methods?
+
+What magic do controller methods do?
+
+Do private methods not do them?
+
+Where is params[:id] coming from?
+
+What exactly is the line Restaurant.create(params.require(:restaurant).permit(:name)) doing?
+
+<%= #link_to("Delete #{r.name}", obliterate_restaurant_path(r.id)) %>
+
+How to delete from test db?
