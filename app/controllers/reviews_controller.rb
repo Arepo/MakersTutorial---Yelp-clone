@@ -9,8 +9,7 @@ class ReviewsController < ApplicationController
 		# @restaurant = Restaurant.find params[:restaurant_id]
   #    	@review = @restaurant.reviews.create params[:review].permit(:content, :rating)
  
-  #    	flash[:notice] = 'Review created!'
-  #    	redirect_to '/restaurants'
+     	flash[:notice] = 'Review created!'
 		Review.create(restaurant_id: params[:restaurant_id], rating: params[:review][:rating], content: params[:review][:content])
     	redirect_to '/restaurants'
    end

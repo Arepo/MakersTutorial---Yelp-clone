@@ -1,15 +1,5 @@
-questions
+if unit tests access db (do they?), why are they faster/how are they different from integration tests?
 
-Why don't we access instance variables of controllers with reader methods?
+why did alex initially make inject sum in the average? just to make it fail later? Or because it was a subset of the later code?
 
-What magic do controller methods do?
-
-Do private methods not do them?
-
-Where is params[:id] coming from?
-
-What exactly is the line Restaurant.create(params.require(:restaurant).permit(:name)) doing?
-
-<%= #link_to("Delete #{r.name}", obliterate_restaurant_path(r.id)) %>
-
-How to delete from test db?
+Can we dwell slightly longer on choice of locations for various bits of code (ie which files we're using)?
