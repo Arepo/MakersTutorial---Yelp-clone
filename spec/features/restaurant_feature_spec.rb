@@ -48,6 +48,16 @@ describe 'restaurant listing page' do
 		end
 	end
 
+	context 'invalid data' do
+
+		it "won't add a restaurant with no name" do
+			visit '/restaurants/new' 
+			click_button 'Create Restaurant'
+			expect(current_path).to eq '/restaurants/new'
+			expect(page).to have_content 'errors'		
+		end
+	end
+
 
 
 

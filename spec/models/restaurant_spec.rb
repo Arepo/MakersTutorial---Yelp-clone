@@ -20,3 +20,15 @@ require 'rails_helper'
 			expect(red_star.average_rating).to eq 4
 		end
 	end
+
+	describe 'validations' do
+		it "doesn't accept nameless restaurants" do
+			Restaurant.create(name: nil)
+			expect(Restaurant.any?).to be_falsy
+		end
+
+		it "doesn't accept restaurants with a name that is less than 3 chars" do
+			Restaurant.create(name: 'NO')
+			expect(Restaurant.any?).to be_falsy
+		end
+	end

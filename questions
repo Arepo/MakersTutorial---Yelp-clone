@@ -3,3 +3,5 @@ if unit tests access db (do they?), why are they faster/how are they different f
 why did alex initially make inject sum in the average? just to make it fail later? Or because it was a subset of the later code?
 
 Can we dwell slightly longer on choice of locations for various bits of code (ie which files we're using)?
+
+if char =~ /[a-z]/
