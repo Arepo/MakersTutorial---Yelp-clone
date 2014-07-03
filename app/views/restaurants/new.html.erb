@@ -1,3 +1,10 @@
 Create a restaurant:
 
 <%= render 'form' %>
+
+<% if @restaurant.errors.full_messages %>
+	You have the following errors:
+	<% @restaurant.errors.full_messages.each do |error| %>
+		<%= error %>
+	<% end %>
+<% end %>

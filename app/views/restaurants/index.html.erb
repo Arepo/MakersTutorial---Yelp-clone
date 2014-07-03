@@ -1,5 +1,6 @@
 <% if @restaurants.any? %>
 	<% @restaurants.each do |restaurant| %>
+		<p/>
 		<%= restaurant.name %>
 		<p/>
 		Average rating: <%= star_rating(restaurant.average_rating) %>
@@ -9,7 +10,7 @@
 		<%= link_to("Review #{restaurant.name}", new_restaurant_review_path(restaurant.id) )%>	
 		<% restaurant.reviews.each do |review| %>
 		<p/>
-			<%=	review.content %>: <%= star_rating(review.rating) %>
+			<%=	review.content %>: <%= star_rating(review.rating) %> 
 		<% end %>
 
 	<% end %>

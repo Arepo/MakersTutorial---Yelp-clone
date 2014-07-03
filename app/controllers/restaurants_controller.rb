@@ -3,13 +3,20 @@ class RestaurantsController < ApplicationController
 		@restaurants = Restaurant.all
 	end
 
+    # GET /restaurants/new HTTP/1.1
 	def new
 		@restaurant = Restaurant.new
 	end
 
+    # POST /restaurants HTTP/1.1 (see rake routes)
 	def create
-		Restaurant.create restaurant_params
-		redirect_to '/restaurants'
+		@restaurant = Restaurant.new restaurant_params 
+		
+		if @restaurant.save
+		  redirect_to '/restaurants'
+		else
+		  render 'new'
+		end
 	end
 
 	def edit

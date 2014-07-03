@@ -48,14 +48,27 @@ describe 'restaurant listing page' do
 		end
 	end
 
-	context 'invalid data' do
+	context 'with invalid data' do
 
 		it "won't add a restaurant with no name" do
 			visit '/restaurants/new' 
+			fill_in 'Name', with: ''
 			click_button 'Create Restaurant'
-			expect(current_path).to eq '/restaurants/new'
-			expect(page).to have_content 'errors'		
+			expect(page).to have_content 'errors'
+			expect(current_path).to eq '/restaurants'
 		end
+
+		before do
+			Restaurant.create(name: "Gardeners Arms")
+		end
+
+		# it "won't update a restaurant to be invalid" do
+		# 	visit '/restaurants'
+		# 	click_link 'Edit Gardeners Arms'
+		# 	fill_in 'Name', with: "GA"
+		# 	expect(page).to have_content 'errors'
+		# 	expect(page).to have_content 'Gardeners Arms'
+		# end
 	end
 
 

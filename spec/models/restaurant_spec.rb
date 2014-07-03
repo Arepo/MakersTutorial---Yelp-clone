@@ -23,12 +23,12 @@ require 'rails_helper'
 
 	describe 'validations' do
 		it "doesn't accept nameless restaurants" do
-			Restaurant.create(name: nil)
-			expect(Restaurant.any?).to be_falsy
+			expect(Restaurant.create(name: nil)).to have(2).errors_on(:name)
 		end
 
 		it "doesn't accept restaurants with a name that is less than 3 chars" do
-			Restaurant.create(name: 'NO')
-			expect(Restaurant.any?).to be_falsy
+			expect(Restaurant.create(name: 'NO')).to have(1).error_on(:name)
 		end
+
+		
 	end
