@@ -11,8 +11,16 @@
 		<% restaurant.reviews.each do |review| %>
 		<p/>
 			<%=	review.content %>: <%= star_rating(review.rating) %> 
-		<% end %>
+		<% end %>		
+		<%= form_for [restaurant, @review] do |review| %>
+			<%= review.label :content %>
+			<%= review.text_area :content %>
 
+			<%= review.label :rating %>
+			<%= review.select :rating, 1..5 %>
+
+			<%= review.submit %>
+		<% end %>
 	<% end %>
 <% else %>
 	No restaurants

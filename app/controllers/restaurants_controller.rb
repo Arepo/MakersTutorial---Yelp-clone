@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
+		@review = Review.new
 	end
 
     # GET /restaurants/new HTTP/1.1

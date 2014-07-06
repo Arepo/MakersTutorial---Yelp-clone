@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe 'review' do
+	
+	def add_review(review, rating)
+		visit '/restaurants'
+		fill_in 'Content', with: review
+		select rating, from: 'Rating'
+		click_button 'Create Review'
+	end
+
 	before do
 		@restaurant = Restaurant.create(name: "Gardeners Arms")
 	end
@@ -16,18 +24,10 @@ describe 'review' do
 	end
 
 	it "displays the average of user reviews" do
-		visit '/restaurants'
 		add_review('Not enough meat', 3)
 		add_review('Top class', 5)
 		expect(page).to have_content "Average rating: ★★★★☆"
 
-	end
-
-	def add_review(review, rating)
-		click_link 'Review Gardeners Arms'
-		fill_in 'Content', with: review
-		select rating, from: 'Rating'
-		click_button 'Create Review'
 	end
 	
 end
