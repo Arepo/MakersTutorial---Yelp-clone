@@ -5,3 +5,10 @@ why did alex initially make inject sum in the average? just to make it fail late
 Can we dwell slightly longer on choice of locations for various bits of code (ie which files we're using)?
 
 if char =~ /[a-z]/
+
+
+****
+
+4.30ish - moving review form to index page using standard ruby/rails
+
+8.50ish moving form to ajax

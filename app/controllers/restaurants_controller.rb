@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
     # POST /restaurants HTTP/1.1 (see rake routes)
 	def create
 		@restaurant = Restaurant.new restaurant_params 
-		
+
 		if @restaurant.save
 		  redirect_to '/restaurants'
 		else
@@ -25,8 +25,13 @@ class RestaurantsController < ApplicationController
 
 	def update
 		@restaurant = Restaurant.find params[:id]
-	    @restaurant.update restaurant_params
-	    redirect_to '/restaurants'
+		
+	    if @restaurant.update restaurant_params
+
+		  redirect_to '/restaurants'
+		else
+		  render 'edit'
+		end
 	end
 
 	def restaurant_params

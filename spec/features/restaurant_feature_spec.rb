@@ -62,13 +62,12 @@ describe 'restaurant listing page' do
 			Restaurant.create(name: "Gardeners Arms")
 		end
 
-		# it "won't update a restaurant to be invalid" do
-		# 	visit '/restaurants'
-		# 	click_link 'Edit Gardeners Arms'
-		# 	fill_in 'Name', with: "GA"
-		# 	expect(page).to have_content 'errors'
-		# 	expect(page).to have_content 'Gardeners Arms'
-		# end
+		it "won't update a restaurant to be invalid" do
+			visit '/restaurants'
+			click_link 'Edit Gardeners Arms'
+			fill_in 'Name', with: "GA"
+			expect(page).to have_content 'errors'
+		end
 	end
 
 
