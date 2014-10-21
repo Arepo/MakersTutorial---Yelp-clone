@@ -1,28 +1,8 @@
-== README
+== Yelp clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+From week 7 of Makers, a tutorial driven project, introducing us various Rails aspects - mainly Active Record, form helpers, AJAX, and PostgreSQL.
 
-Things you may want to cover:
+It's basic logic only with no CSS - as with other Makers projects, it's mainly here as reference for when I need to use one of the relevant technologies.
 
-* Ruby version
+To see it in all its ASCII glory (with a couple of seed restaurants), run 'rails s' in the root folder, and open localhost:3000 in browser of choice.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
